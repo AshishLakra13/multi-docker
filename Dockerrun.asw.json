@@ -1,0 +1,39 @@
+{
+    "AWSEBDocerrunVersion": 2,
+    "containerDefinitions":[
+        { 
+            "name":"client",
+            "image":"ashishlakra13/multi-client",
+            "hostname":"client",
+            "essentails":false
+
+        },
+        { 
+            "name":"server",
+            "image":"ashishlakra13/multi-server",
+            "hostname":"server",
+            "essentails":false
+
+        },
+        { 
+            "name":"worker",
+            "image":"ashishlakra13/multi-worker",
+            "hostname":"worker",
+            "essentails":false
+
+        },
+        { 
+            "name":"nginx",
+            "image":"ashishlakra13/multi-nginx",
+            "hostname":"nginx",
+            "essentails":true,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ]
+
+        }
+    ]
+}
